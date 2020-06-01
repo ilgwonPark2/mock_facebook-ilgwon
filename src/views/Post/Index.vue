@@ -118,11 +118,11 @@
                   class="col-12 pl-0 pr-0"
                   style="hegiht: 75px;">
                   <div class="row mt-2">
-                    <div class="col-8 ml-3">
+                    <div class="col-7 ml-3">
                       <i class="far fa-thumbs-up mr-1"/>
                       <a class="small text-muted">회원님, 외 3500명</a>
                     </div>
-                    <div class="col-3">
+                    <div class="col-4 text-right">
                       <a class="small text-muted mr-1">댓글 3개</a>
                       <a class="small text-muted">공유 7회</a>
                     </div>
