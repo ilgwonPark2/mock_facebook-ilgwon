@@ -16,9 +16,8 @@
           href="https://www.facebook.com/officialdavichi/"
           class="ml-1">
           <span><i
-            class="fa fa-check-circle"
-            aria-hidden="true"
-            style="color: rgb(91, 147, 252)"/></span>
+            class="fa fa-check-circle check-circle"
+            aria-hidden="true"/></span>
         </a>
       </h1>
       <div>
@@ -101,6 +100,10 @@ export default {
 
  .conatiner-leftNav {
    padding: 12px 0;
+ }
+
+ .check-circle {
+   color: rgb(91, 147, 252);
  }
 
  .leftNavLink {

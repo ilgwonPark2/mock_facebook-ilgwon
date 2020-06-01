@@ -53,21 +53,17 @@
                 class="row pl-3">
                 <i class="fas fa-pencil-alt fa-1x pr-2"/><a class="small">게시물 만들기</a>
               </div>
-              <div
-                class="row pl-3"
-                style="background-color:white">
+              <div class="row pl-3 background-white">
                 <div
-                  class="pt-3"
-                  style="height:70px;">
+                  id="post-content"
+                  class="pt-3">
                   <a class="small">게시물을 작성하세요...</a>
                 </div>
               </div>
-              <div
-                class="row pl-3 pr-3"
-                style="background-color:white;">
+              <div class="row pl-3 pr-3 background-white">
                 <div
-                  class="w-100"
-                  style="height:53px; border-top:0.5px solid lightgrey">
+                  id="post-foo"
+                  class="w-100">
                   <button class="btn mt-2 pt-0 h-50 mr-2">
                     <i class="fa fa-camera-retro mr-1"/><a class="small">사진/동영상</a>
                   </button>
@@ -85,19 +81,16 @@
             </section>
             <section class="mt-5">
               <div
-                class="row"
-                style="background-color:white; border-radius: 5px;">
+                id="post"
+                class="row background-white">
                 <div
-                  class="mt-3 col-2"
-                  style="height: 60px;">
+                  class="mt-3 col-2 post-header">
                   <img
                     src="../../assets/img/davichi_post_logo.jpg"
-                    alt="davichi-logo"
-                    style="width:40px; border-radius:50%">
+                    alt="davichi-logo">
                 </div>
                 <div
-                  class="mt-3 pl-0 col-10"
-                  style="height: 60px;">
+                  class="mt-3 pl-0 col-10 post-header">
                   <div class="">
                     <a
                       href="https://www.facebook.com/officialdavichi/"
@@ -110,13 +103,13 @@
                   <article class="">
                     <img
                       src="../../assets/img/davichi_banner_wide.jpg"
-                      style="width: 100%;"
+                      class="w-100"
                       alt="post-img">
                   </article>
                 </div>
                 <div
-                  class="col-12 pl-0 pr-0"
-                  style="hegiht: 75px;">
+                  id="post-line"
+                  class="col-12 pl-0 pr-0">
                   <div class="row mt-2">
                     <div class="col-7 ml-3">
                       <i class="far fa-thumbs-up mr-1"/>
@@ -128,7 +121,7 @@
                     </div>
                   </div>
                   <div
-                    class="row mb-2">
+                    class="row mb-2 mt-2">
                     <div class="col-3 ml-5">
                       <button
                         type="button"
@@ -204,8 +197,7 @@
                 <div class="contents-right-info w-100 mb-3 pb-3">
                   <div class="mb-1 p-2">
                     <i
-                      class="fab fa-facebook ml-2 color-fb mr-3"
-                      style="font-size:24px"/>
+                      class="fab fa-facebook ml-2 color-fb mr-3 large"/>
                     <a class="ml-2 font-weight-bold"> 페이지 투명성</a>
                     <a class="pull-right small pr-3"> 더 보기</a>
                   </div>
@@ -316,11 +308,9 @@ export default {
 </script>
 
 <style scoped>
-  .globalContainer {
-    zoom: 1;
-    width: 1012px !important;
-    height: 100%;
-    min-height: 150vh;
+
+  .background-white {
+    background-color:white;
   }
   .container {
     width: 780px;
@@ -395,6 +385,28 @@ export default {
     text-align: center;
     text-shadow: none;
     vertical-align: middle;
+  }
+  .globalContainer {
+    zoom: 1;
+    width: 1012px !important;
+    height: 100%;
+    min-height: 150vh;
+  }
+  #post {
+    border-radius: 5px;
+  }
+  #post > div.post-header {
+    height: 60px;
+  }
+  #post > div.post-header > img {
+    width:40px;
+    border-radius:50%;
+  }
+  #post-content {
+    height:70px;
+  }
+  #post-foo {
+    height:53px; border-top:0.5px solid lightgrey;
   }
 
 </style>
