@@ -28,14 +28,14 @@
       </div>
     </div>
     <div class="row ml-3">
-      <div class="col-1 m1-2">
+      <div class="col-2 pr-0">
         <button
           class="btn btn-sm btn-link"
           @click="like()">
           <a class="small">좋아요</a>
         </button>
       </div>
-      <div class="col-1">
+      <div class="col pl-0">
         <button
           class="btn btn-sm btn-link"
           @click="showChild()">

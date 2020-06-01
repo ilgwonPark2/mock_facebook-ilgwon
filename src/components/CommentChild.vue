@@ -50,7 +50,7 @@
             <a class="small">좋아요</a>
           </button>
         </div>
-        <div class="col-2 pl-0">
+        <div class="col pl-0">
           <button
             class="btn btn-sm btn-link pl-0"
             @click="focus()"
