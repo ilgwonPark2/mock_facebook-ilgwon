@@ -7,10 +7,18 @@
  */
 import * as types from './mutation-types';
 
+function getCommentTable(state) {
+  return JSON.parse(JSON.stringify(state.commentTable));
+}
+
+function getChildTable(state) {
+  return JSON.parse(JSON.stringify(state.childTable));
+}
+
 export const likeComment = ({ commit, state }, args) => {
   try {
     commit(types.LIKE_COMMENT, { path: args[0], data: args[1] });
-    const commentParent = JSON.parse(JSON.stringify(state.commentTable));
+    const commentParent = getCommentTable(state);
     localStorage.CommentTable = JSON.stringify(commentParent);
     return { status: 'success' };
   } catch (e) {
@@ -21,7 +29,7 @@ export const likeComment = ({ commit, state }, args) => {
 export const likeReply = ({ commit, state }, args) => {
   try {
     commit(types.LIKE_REPLY, { path: args[0], rid: args[1], data: args[2] });
-    const commentReply = JSON.parse(JSON.stringify(state.childTable));
+    const commentReply = getChildTable(state);
     localStorage.ReplyTable = JSON.stringify(commentReply);
     return { status: 'success' };
   } catch (e) {
@@ -51,7 +59,7 @@ export const getCommentChild = ({ commit }) => {
 
 export const postComment = ({ state }, args) => {
   try {
-    const commentParent = JSON.parse(JSON.stringify(state.commentTable));
+    const commentParent = getCommentTable(state);
     const id = args[0];
     commentParent[id] = args[1];
     localStorage.CommentTable = JSON.stringify(commentParent);
@@ -67,7 +75,7 @@ export const replyComment = ({ commit, state }, args) => {
     const childID = args.id;
     const content = args.content;
 
-    const commentReply = JSON.parse(JSON.stringify(state.childTable));
+    const commentReply = getChildTable(state);
     if (commentReply[parentID] === undefined) {
       commentReply[parentID] = {};
     }
@@ -107,6 +115,7 @@ export const deleteComment = ({ state }, args) => {
     const commentParent = state.commentTable;
     delete commentParent[args.id];
     localStorage.CommentTable = JSON.stringify(commentParent);
+
     const commentChild = state.childTable;
     delete commentChild[args.id];
     localStorage.ReplyTable = JSON.stringify(commentChild);
